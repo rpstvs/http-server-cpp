@@ -1,7 +1,8 @@
 #ifndef server_h
 #define server_h
 
-#include "socket/inc/listenSocket.h"
+#include "listenSocket.h"
+#include <unistd.h>
 
 class Server
 {
