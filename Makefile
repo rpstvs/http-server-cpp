@@ -5,15 +5,20 @@
 .DEFAULT_GOAL := HTTP-Server
 
 INCS = \
--I ./inc/ \
+-I ./server/inc \
+-I ./socket/inc \
+-I ./threadpool/inc \
 
 
 
 OBJS+= \
-./src/bindingSocket.o \
-./src/socket.o \
-./src/listenSocket.o \
-./src/main.o
+./server/src/server.o \
+./server/src/testServer.o \
+./socket/src/bindingSocket.o \
+./socket/src/socket.o \
+./socket/src/listenSocket.o \
+./threadpool/src/threadpool.o \
+./server/src/main.o \
 
 
 
