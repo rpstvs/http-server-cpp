@@ -1,6 +1,7 @@
 
 #include "testServer.h"
 
+
 TestServer::TestServer() : Server(AF_INET, SOCK_STREAM, 0, 8080, INADDR_ANY, 10,4)
 
 {
@@ -53,7 +54,12 @@ void TestServer::handler(int client_con)
 
 void TestServer::responder()
 {
-    std::string response = "<h1>hello</h1>";
+
+    std::string htmlFile = "<!DOCTYPE html><html lang=\"en\"><body><h1> HOME </h1><p> Hello from your Server :) </p></body></html>";
+    std::ostringstream ss;
+    ss << "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: " << htmlFile.size() << "\n\n"
+       << htmlFile;
+    std::string response = ss.str();
 
     write(new_socket, response.c_str(), response.size());
     close(new_socket);
@@ -67,5 +73,5 @@ void TestServer::launch()
        accept_connection();
        std::cout << "======== DONE ======" << std::endl;
     }
-    
+ 
 }

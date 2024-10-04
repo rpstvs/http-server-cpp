@@ -8,6 +8,8 @@ INCS = \
 -I ./server/inc \
 -I ./socket/inc \
 -I ./threadpool/inc \
+-I ./socket/inc \
+
 
 
 
