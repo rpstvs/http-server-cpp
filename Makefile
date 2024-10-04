@@ -6,7 +6,10 @@
 
 INCS = \
 -I ./server/inc \
- -I ./socket/inc \
+-I ./socket/inc \
+-I ./threadpool/inc \
+-I ./socket/inc \
+
 
 
 
@@ -16,6 +19,7 @@ OBJS+= \
 ./socket/src/bindingSocket.o \
 ./socket/src/socket.o \
 ./socket/src/listenSocket.o \
+./threadpool/src/threadpool.o \
 ./server/src/main.o \
 
 

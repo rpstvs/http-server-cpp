@@ -2,19 +2,17 @@
 
 #include "server.h"
 #include <stdio.h>
-#include <iostream>
-#include <sstream>
+
 
 class TestServer : public Server
 {
-private:
+    private:
     char buffer[1024] = {0};
     int new_socket;
-
-public:
-    TestServer();
-    void launch();
+    public:
+        TestServer();
+        void launch();
     void accept_connection();
-    void handler();
+    void handler(int client_con);
     void responder();
 };
